@@ -127,7 +127,19 @@ body {
   border-radius: 5px;
 }
 
+#shortcuts-p, #new-link-p{
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: white;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: flex;
 }

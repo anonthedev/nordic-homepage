@@ -11,24 +11,22 @@ const nameFormEl = document.getElementById("name-form");
 const greetingEl = document.getElementById("greeting-h1");
 const afterContentEl = document.getElementsByClassName("content-after")[0];
 const nameArticleEl = document.getElementsByClassName("name-article")[0];
-const linkNameEl = document.getElementById("link-name");
-const linkUrlEl = document.getElementById("link-url");
-const addLinkBtn = document.getElementById("add-link-btn");
-const typedLinksDivEl = document.getElementById("typed-link");
-const shortcutEl = document.getElementById("shortcuts-p");
-const newLinkEl = document.getElementById("new-link-p");
-const addNewLinkDivEl = document.getElementById("add-new-link");
-const givenLinksEl = document.getElementById("given-links");
+// const linkNameEl = document.getElementById("link-name");
+// const linkUrlEl = document.getElementById("link-url");
+// const addLinkBtn = document.getElementById("add-link-btn");
+// const typedLinksDivEl = document.getElementById("typed-link");
+// const shortcutEl = document.getElementById("shortcuts-p");
+// const newLinkEl = document.getElementById("new-link-p");
+// const addNewLinkDivEl = document.getElementById("add-new-link");
+// const givenLinksEl = document.getElementById("given-links");
+// const allLinksDivEl = document.getElementById("links-div");
 
 //declaring variables
 let nameVal;
 let linkName;
 let linkUrl;
 let createdLink;
-let allCreatedLinks = [];
-
-givenLinksEl.style.display = "none";
-addNewLinkDivEl.style.display = "none";
+let showGivenLinksEl = false;
 
 //making a function that returns random item from given array
 function randomIndexes(array) {
@@ -99,27 +97,32 @@ function showContentAfter() {
   showContent();
 }
 
-shortcutEl.addEventListener("click", () => {
-  givenLinksEl.style.display = "block";
-});
+// shortcutEl.addEventListener("click", () => {
+//   showGivenLinksEl = !showGivenLinksEl;
 
-newLinkEl.addEventListener("click", () => {
-  addNewLinkDivEl.style.display = "flex";
-});
+//   if (showGivenLinksEl === false) {
+//     allLinksDivEl.classList.add("hide");
+//   } else {
+//     allLinksDivEl.classList.remove("hide");
+//   }
+// });
 
-addLinkBtn.addEventListener("click", () => {
-  linkName = linkNameEl.value;
-  linkUrl = linkUrlEl.value;
-  console.log(linkName);
-  console.log(linkUrl);
+// addLinkBtn.addEventListener("click", () => {
+//   linkName = linkNameEl.value;
+//   linkUrl = linkUrlEl.value;
 
-  if (linkUrl == "" || linkName == "") {
-  } else {
-    createdLink = document.createElement("a");
-    createdLink.href = "https://" + linkUrl;
-    createdLink.innerHTML = linkName;
-    createdLink.target = "blank";
+//   if (linkUrl == "" || linkName == "") {
+//   } else {
+//     createdLink = document.createElement("a");
+//     createdLink.href = "https://" + linkUrl;
+//     createdLink.innerHTML = linkName;
+//     createdLink.target = "blank";
+//     typedLinksDivEl.appendChild(createdLink);
+//     localStorage.setItem("shortLinks", [
+//       { linkUrlLS: linkUrl, linkNameLS: linkName },
+//     ]);
 
-    typedLinksDivEl.appendChild(createdLink);
-  }
-});
+//     let linkLS = localStorage.getItem("shortLinks");
+//     console.log(linkLS);
+//   }
+// });
